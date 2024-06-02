@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #FFFEFE;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: auto;
+    height: 100vh;
+    margin: auto auto;
+    background-color: #FFFEFE;
+    border-radius: 0px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+.registration-form, .login-form {
+    flex: 0 0 37%; /* Ширина 37% */
+    padding: 50px;
+    margin-right: 0; /* Видалення відступу */
+}
+.slideshow {
+    flex: 0 0 50%; /* Ширина 50% */
+    background-color: #ddd;
+    margin-left: 0; /* Видалення відступу */
+}
+.form-title {
+    text-align: left;
+    color: #000;
+    font-size: 32px;
+}
+.form-label {
+    font-weight: medium;
+    font-size: 16px;
+}
+.input-wrapper {
+    margin-bottom: 20px; /* Відступ між полем вводу та текстом помилки */
+}
+.form-input {
+    width: calc(100% - 22px);
+    height: 40px;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    border: 1px solid #B6B6B6;
+    box-sizing: border-box;
+}
+.form-input.error {
+    border-color: #ff0000;
+}
+.error-message {
+    color: #ff0000;
+    font-size: 10px;
+    margin-top: -13px; /* Зміщення тексту помилки вгору */
+}
+.form-button {
+    background-color: #DF1515;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: calc(100% - 22px);
+    font-size: 16px;
+    margin-top: 10px;
+}
+.form-button:hover {
+    background-color: #DF1515;
+}
+
+.slideshow {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    height: 100%;
+}
+.slide {
+    width: 100%;
+    height: auto;
+    display: none;
+}
+#menu {
+    display: none; /* Початково меню приховане */
+  }

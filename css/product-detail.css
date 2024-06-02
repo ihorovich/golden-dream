@@ -1,0 +1,332 @@
+/* fonts */
+
+@import url('https://fonts.cdnfonts.com/css/helvetica-neue-55');
+
+@font-face {
+	font-family: 'NyghtSerif';
+	font-display: swap;
+	src: url("../font/NyghtSerif-Light.ttf");
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'NyghtSerif';
+	font-display: swap;
+	src: url("../font/NyghtSerif-Regular.ttf");
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'WixMadeforText';
+	font-display: swap;
+	src: url("../font/WixMadeforText-Regular.ttf");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'WixMadeforText';
+	font-display: swap;
+	src: url("../font/WixMadeforText-Medium.ttf");
+	font-weight: 500;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'WixMadeforText';
+	font-display: swap;
+	src: url("../font/WixMadeforText-SemiBold.ttf");
+	font-weight: 600;
+	font-style: normal;
+}
+
+/* Загальні стилі */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'WixMadeforText';
+    font-size: 14px;
+    font-weight: normal;
+    background-color: #FFFEFE;
+    padding: 0;
+}
+.product-name{
+    font-size: 32px;
+    color: blue;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+.details-image{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.product-image{
+    display: flex;
+    gap: 10px;
+}
+.product-detail-container{
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    align-items: flex-start;
+    margin-top: 100px;
+}
+.product-info{
+    width: 700px;
+    font-size: 12px;
+}
+.price-size{
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    gap: 10px;
+}
+.product-price{
+    font-weight: 700;
+    font-size: 14px;
+}
+.add-to-cart {
+    margin-top: 20px;
+    width: 100%; /* Розтягнути внутрішній div на всю ширину контейнера */
+    height: 40px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    background-color: black; /* Чорний колір фону */
+    color: white; /* Білий колір тексту */
+    border: 2px solid transparent; /* Початковий стан обводки */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Анімація переходів */
+}
+
+.add-to-cart:hover {
+    background-color: white; /* Зміна фону на білий */
+    color: black; /* Зміна кольору тексту на чорний */
+    border-color: black; /* Чорна обводка при наведенні */
+}
+
+.question{
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 32px;
+    font-family: WixMadeforText;
+    margin-bottom: 10px;
+}
+.answer {
+    display: flex;
+    font-size: 10px;
+    line-height: 18px;
+    justify-content: space-between;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+.answer-p-01{
+    font-size: 14px;
+}
+.answer-p-02{
+    width: 400px;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.question-text {
+    flex-grow: 1;
+    width: 310px;
+}
+.toggle-btn {
+    font-size: 18px;
+    transition: transform 0.3s ease-out;
+}
+.faq-item.active .toggle-btn {
+    transform: rotate(180deg);
+}
+.faq-item.active .answer {
+    max-height: 200px; /* Встановіть вищу висоту, якщо ви очікуєте довших відповідей */
+}
+.brend{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 12px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.line-faq{
+    border: none;
+    height: 1px;
+    background-color: #363636;
+}
+.cart-icon-container {
+    position: relative;
+    display: inline-block;
+}
+
+.cart-count {
+    position: absolute;
+    top: -10px;
+    right: -20px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+}
+.item-icon-header{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.item-icon{
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Стили для корзины */
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -600px;
+    width: 500px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+    transition: right 0.3s;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-sidebar.open {
+    right: 0;
+}
+
+.cart-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 20px;
+}
+
+.cart-items-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.total-price-container {
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.total-price {
+    font-weight: bold;
+    text-align: right;
+}
+
+.btn-checkout {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #0000ff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn-checkout:hover {
+    background-color: #0000cc;
+}
+
+.cart-item {
+    display: flex;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.cart-item-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.detail-description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    margin-left: 20px;
+    gap: 25px
+}
+
+.name-product {
+    font-size: 14px;
+    color: #0000ff;
+    line-height: 20px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn-delete {
+    border: 1px solid #0000ff;
+    background-color: transparent;
+    color: #0000ff;
+    height: 23px;
+}
+
+.btn-plus-minus {
+    border: 1px solid #0000ff;
+    background-color: transparent;
+    color: black;
+    padding: 5px;
+    cursor: pointer;
+    height: 27px;
+    width: 27px;
+}
+
+.h2-cart {
+    font-size: 20px;
+    font-weight: 400;
+    color: #0000ff;
+    margin-left: 20px;
+}
+
+.price-product {
+    color: #0000ff;
+}
+.cart-div{
+    margin-top: 20px;
+}
+.price-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.price-div span{
+    font-weight: 600;
+}
+.quantity{
+    color: #0000ff;
+    font-weight: 500;
+}

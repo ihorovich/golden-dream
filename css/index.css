@@ -1,0 +1,1398 @@
+/* fonts */
+
+@font-face {
+	font-family: 'NyghtSerif';
+	font-display: swap;
+	src: url("../font/NyghtSerif-Light.ttf");
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'NyghtSerif';
+	font-display: swap;
+	src: url("../font/NyghtSerif-Regular.ttf");
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'WixMadeforText';
+	font-display: swap;
+	src: url("../font/WixMadeforText-Regular.ttf");
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'WixMadeforText';
+	font-display: swap;
+	src: url("../font/WixMadeforText-Medium.ttf");
+	font-weight: 500;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'WixMadeforText';
+	font-display: swap;
+	src: url("../font/WixMadeforText-SemiBold.ttf");
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Helvetica';
+	font-display: swap;
+	src: url("../font/helvetica-light-587ebe5a59211.ttf");
+	font-style: normal;
+}
+
+/* Загальні стилі */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: 'WixMadeforText';
+    font-size: 14px;
+    font-weight: normal;
+    background-color: #FFFEFE;
+    padding: 0;
+}
+
+.container{
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 100%;
+    position: relative;
+}
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    align-items: center;
+
+}
+.shopNameE-COMMERCE {
+    flex: 1; /* Займати доступний простір */
+}
+.menu-header{
+    display: flex;
+    align-items: center;
+
+}
+
+
+.catalog{
+    margin-right: 40px;
+}
+.shopName{
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'WixMadeforText';
+}
+.nameE-COMMERCE{
+    font-style: normal;
+}
+.shopName, .catalog, .new{
+    color: black;
+    text-decoration: none;
+}
+
+.catalog,
+.new {
+    position: relative; /* Додати позиціонування для псевдоелемента */
+    text-decoration: none; /* Забрати підкреслення */
+    color: #000000; /* Колір тексту посилання */
+
+}
+
+.catalog::after,
+.new::after {
+    content: ''; /* Додати вміст для псевдоелемента */
+    position: absolute; /* Абсолютне позиціонування */
+    left: 0; /* Позиція зліва */
+    bottom: -2px; /* Позиція знизу */
+    width: 100%; /* Ширина 100% */
+    height: 1px; /* Товщина лінії */
+    background-color: #000000; /* Колір лінії */
+    transform: scaleX(0); /* Зменшення ширини до 0 */
+    transition: transform 0.3s ease; /* Анімація затримки */
+}
+
+.catalog:hover::after,
+.new:hover::after {
+    transform: scaleX(1); /* Збільшення ширини до 1 при наведенні */
+}
+.language{
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+}
+.language-eng{
+    text-decoration: none;
+    margin-right: 10px;
+    color: black
+}
+.language-ua{
+    text-decoration: none;
+    margin-left: 10px;
+    color: black
+}
+.menu-header{
+    align-items: center;
+}
+.menu{
+    cursor: pointer;
+}
+.item-icon-header{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.item-icon{
+    cursor: pointer;
+}
+
+
+
+
+
+
+.auth-menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100vh;
+    background-color: #ffffff;
+    overflow: hidden;
+    transition: width 0.3s ease;
+    z-index: 999; /* Завжди вище від контенту */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+}
+.login-h2{
+    font-weight: 600;
+    color: #0000ff;
+}
+.auth-menu.active {
+    width: 30%; /* Ширина меню */
+}
+
+.menu-content {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+}
+
+.div-input {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.input-email-passm{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.input-reg{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.div-input input{
+    border: 1px solid #0000ff;
+    background-color: transparent;
+    color: #0000ff;
+    font-weight: 500px;
+    text-transform: uppercase;
+}
+.div-input input::placeholder{
+    color: #0000ff;
+    font-weight: 500px;
+    text-transform: uppercase;
+}
+.div-btn{
+    margin-top: 15px;
+}
+.auth-form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.auth-form input {
+    display: block;
+    margin-bottom: 10px;
+    padding: 8px;
+    width: 340px;
+}
+
+.auth-form button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #0000ff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+}
+.auth-form button:hover {
+    background-color: #0000a2;
+    font-weight: 500;
+    color: #ffffff;
+}
+.form-footer {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.forgot-password {
+    color: #007bff;
+}
+
+.switch-form {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.register-link, .login-link {
+    color: #0000ff;
+    cursor: pointer;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.close-menu {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+    z-index: 1000; /* Завжди вище від меню */
+    font-size: 24px; /* Збільшуємо розмір кнопки */
+}
+.page-goods-header{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 14px;
+}
+.page-goods-header a {
+    font-size: 18px;
+    text-decoration: none; /* Вимикає підкреслення */
+    color: blue; /* Задає синій колір тексту */
+}
+
+
+.missing-goods{
+    font-size: 32px;
+    color: #ff0000;
+    text-transform: uppercase;
+}
+
+
+
+
+
+
+
+
+
+.h1-name{
+    font-family: "NyghtSerif";
+    font-style: italic;
+    font-size: 68px;
+    color: rgb(255, 255, 255);
+    word-wrap: break-word;
+    line-height: 80px;
+}
+
+
+.about-company{
+    display: flex;
+}
+.about-company-p{
+    width: 160px;
+    text-transform: uppercase;
+    line-height:  18px; /* Задаємо інтервал у 2 пікселі */
+    font-size: 12px;
+    color: #ffffff;
+}
+.about-text{
+    display: flex;
+    flex-direction: row; /* Change to column layout */
+}
+
+.what-of-company{
+    margin-top: 30px;
+}
+
+.about-text-p{
+    width: 300px;
+    text-transform: uppercase;
+    line-height:  18px; /* Задаємо інтервал у 2 пікселі */
+    font-size: 12px;
+    color: #ffffff;
+    text-indent: 48px;
+    margin-left: 95px;
+}
+.about-text-p-2{
+    width: 300px;
+    text-transform: uppercase;
+    line-height:  18px; /* Задаємо інтервал у 2 пікселі */
+    font-size: 12px;
+    color: #ffffff;
+    text-indent: 91px;
+    margin-left: 95px;
+}
+.main-section {
+    background-image: url('../image/234.svg');
+    background-size: cover; /* Зробить так, щоб зображення покривало всю секцію */
+    background-position: center; /* Вирівняє зображення по центру */
+    background-repeat: no-repeat; /* Запобігає повторенню зображення */
+}
+.container-item{
+    margin-top: 25px;
+
+    padding: 50px 0px 50px 0px;
+}
+.btn-description{
+    margin-top: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.p-description{
+    display: flex;
+}
+.new-collection {
+    color: #ffffff; /* Колір тексту кнопки */
+    font-size: 14px; /* Розмір тексту кнопки */
+    font-weight: 500; /* Жирний шрифт */
+    cursor: pointer;
+    background-color: transparent; /* Колір фону кнопки */
+    text-decoration: none;
+    border: 1px solid #ffffff;
+    padding: 10px 20px;
+}
+.scroll-down{
+    color: #000000; /* Колір тексту кнопки */
+    font-size: 14px; /* Розмір тексту кнопки */
+    font-weight: 400; /* Жирний шрифт */
+    cursor: pointer;
+    position: relative; /* Для позиціонування псевдоелемента */
+    text-decoration: none; /* Видалити стандартне підкреслення */
+}
+
+.scroll-down::after{
+    content: ''; /* Порожній контент для псевдоелемента */
+    display: block; /* Робимо його блочним елементом */
+    width: 100%; /* Ширина підкреслення */
+    height: 2px; /* Висота підкреслення */
+    background-color: #000000; /* Колір підкреслення */
+    position: absolute; /* Абсолютне позиціонування */
+    bottom: -4px; /* Відступ від тексту */
+    left: 0; /* Вирівнювання по лівому краю */
+}
+
+.scroll-down-2{
+    color: #000000; /* Колір тексту кнопки */
+    font-size: 14px; /* Розмір тексту кнопки */
+    font-weight: 400; /* Жирний шрифт */
+    cursor: pointer;
+
+    text-decoration: none; /* Видалити стандартне підкреслення */
+}
+.scroll-down-2::after{
+    content: ''; /* Порожній контент для псевдоелемента */
+    width: 100%; /* Ширина підкреслення */
+    height: 2px; /* Висота підкреслення */
+    background-color: #000000; /* Колір підкреслення */
+
+    bottom: -4px; /* Відступ від тексту */
+    left: 0; /* Вирівнювання по лівому краю */
+}
+.menu-dropdown {
+    position: absolute;
+    width: 99%;
+    height: 0;
+    top: 80px;
+    left: 0;
+    background-color: #ccc;
+    padding: 10px;
+    justify-content: flex-end;
+    border-top: 1px solid #ccc;
+    z-index: 1000;
+    overflow-y: auto;
+    opacity: 0;
+    transition: height 0.5s ease, opacity 0.5s ease; /* Анімація висоти та прозорості */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.menu-dropdown.show {
+    height: 80vh; /* Змінюємо висоту, щоб відображати меню */
+    opacity: 1;
+}
+.menu-dropdown ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; /* Видаляємо стандартний відступ */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Вирівнюємо по центру по вертикалі */
+    justify-content: center; /* Вирівнюємо по центру по горизонталі */
+}
+.menu-dropdown ul li {
+    margin-bottom: 20px; /* Збільшуємо відступ між пунктами меню */
+    position: relative; /* Додаємо позиціонування */
+}
+
+.menu-dropdown ul li a {
+    text-decoration: none;
+    color: #000;
+    font-size: 18px; /* Збільшуємо розмір шрифту */
+    font-weight: 600; /* Жирний шрифт */
+    position: relative; /* Додаємо позиціонування */
+}
+
+.menu-dropdown ul li a::after {
+    content: ''; /* Додаємо вміст для псевдоелемента */
+    position: absolute; /* Абсолютне позиціонування */
+    left: 0; /* Позиція зліва */
+    bottom: -3px; /* Позиція знизу */
+    width: 100%; /* Ширина 100% */
+    height: 2px; /* Товщина лінії */
+    background-color: #000000; /* Колір лінії */
+    transform: scaleX(0); /* Зменшення ширини до 0 */
+    transition: transform 0.3s ease; /* Анімація затримки */
+}
+
+.menu-dropdown ul li a:hover::after {
+    transform: scaleX(1); /* Збільшення ширини до 1 при наведенні */
+}
+
+
+
+
+
+#dropdown {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 98%;
+    top: 50px;
+    left: 0;
+    background-color: #ccc;
+    padding: 20px 20px;
+    z-index: 1;
+    height: 400px;
+    display: flex;
+}
+.ul-dropdown{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.catalog-page{
+    font-size: 20px;
+    color: #000;
+    text-decoration: none;
+}
+
+.catalog-dropdown{
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.page-goods{
+    margin-top: 150px;
+}
+.about-section{
+    margin-top: 150px;
+}
+
+.about-h2{
+    margin-left: 78px;
+    font-family: 'NyghtSerif';
+    font-size: 56px;
+    font-style: italic;
+    font-weight: 300;
+    color: #0000ff;
+}
+.about-descr-p-1{
+    margin-top: 50px;
+    width: 160px;
+    text-transform: uppercase;
+    line-height:  18px; /* Задаємо інтервал у 2 пікселі */
+    font-size: 12px;
+    color: #000000;
+    margin-left: 78px;
+
+}
+.text-section-2 {
+    display: flex;
+    align-items: flex-end; /* Вирівнюємо по нижньому краю */
+}
+.text-section-3{
+    font-size: 48px;
+    font-family: 'NyghtSerif';
+    color: #ccc;
+}
+.text-section-3 {
+    flex: 1; /* Make it take up all available space */
+    position: relative;
+    padding: 20px;
+}
+
+.num-section {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin: 0;
+    transform: translateX(0); /* Reset any previous translation */
+}
+.about-descr-p-2{
+    width: 300px;
+    text-transform: uppercase;
+    line-height:  18px; /* Задаємо інтервал у 2 пікселі */
+    font-size: 12px;
+    color: #000000;
+    margin-left: 78px;
+
+}
+.about-text-2{
+    display: flex;
+    margin-top: 80px;
+    justify-content: space-between;
+}
+
+.meta{
+    text-transform: uppercase;
+    line-height:  18px; /* Задаємо інтервал у 2 пікселі */
+    font-size: 20px;
+    color: #000000;
+    font-style: italic;
+    font-weight: 600;
+}
+
+.meta-p{
+    text-transform: uppercase;
+    line-height:  18px; /* Задаємо інтервал у 2 пікселі */
+    font-size: 12px;
+    color: #000000;
+    width: 320px;
+}
+.scroll-down {
+    color: #000000; /* Колір тексту кнопки */
+    font-size: 14px; /* Розмір тексту кнопки */
+    font-weight: 600; /* Жирний шрифт */
+    cursor: pointer;
+    background-color: transparent; /* Колір фону кнопки */
+}
+
+
+.desc-meta {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Розмістить елементи по вертикалі по обох краях */
+    align-items: flex-start; /* Вирівнюємо елементи по лівому краю */
+    margin-right: 140px;
+}
+.dosvid{
+    margin-top: 50px;
+    text-transform: uppercase;
+    line-height:  18px; /* Задаємо інтервал у 2 пікселі */
+    font-size: 20px;
+    color: #000000;
+    margin-left: 78px;
+    font-style: italic;
+    font-weight: 600;
+}
+.history-descr-p-1{
+    margin-top: 25px;
+    width: 300px;
+    text-transform: uppercase;
+    line-height:  18px; /* Задаємо інтервал у 2 пікселі */
+    font-size: 12px;
+    color: #000000;
+    margin-left: 78px;
+}
+.facts{
+    display: flex;
+    justify-content: end;
+}
+.facts-text{
+    display: flex;
+
+}
+.facts-item{
+    margin-right: 225px;
+}
+.facts-item-div{
+    margin-bottom: 100px;
+}
+.facts-item-h4{
+    font-size: 96px;
+    color: #0000ff;
+    font-weight: 600;
+}
+.facts-item-p{
+    text-transform: uppercase;
+    line-height:  18px; /* Задаємо інтервал у 2 пікселі */
+    font-size: 12px;
+    color: #000000;
+    font-weight: 600;
+    margin-left: 5px;
+}
+.international-exhibitions{
+    margin-top: 80px;
+    display: flex;
+    flex-direction: row;
+    margin-left: 378px;
+}
+.descr-international-exhibitions{
+    width: 300px;
+    text-transform: uppercase;
+    line-height:  18px; /* Задаємо інтервал у 2 пікселі */
+    font-size: 12px;
+    color: #000000;
+    margin-right: 48px;
+}
+.goods-section{
+    margin-top: 150px;
+}
+.h2-goods-container, .h2-reviews-container{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 26%;
+}
+.goods-h2, .guarantee-h2, .reviews-h2, .frequently-asked-questions-h2{
+    font-family: 'NyghtSerif';
+    font-size: 56px;
+    font-style: italic;
+    font-weight: 300;
+    color: #0000ff;
+}
+.what-goods-container{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+.product-detail-container {
+    display: flex;
+    padding: 20px;
+}
+
+.product-image {
+    flex: 1;
+    padding: 10px;
+}
+
+.product-info {
+    flex: 2;
+    padding: 10px;
+}
+
+.product-description {
+    margin-top: 20px;
+}
+
+.add-to-cart {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    cursor: pointer;
+}
+
+.add-to-cart:hover {
+    background-color: #0056b3;
+}
+
+.set-of-goods-container{
+    display: flex;
+    gap: 35px;
+    margin-top: 20px;
+}
+.what-goods{
+    font-size: 32px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.btn-more {
+    display: inline-block;
+    padding-left: 0;
+    position: relative;
+    padding-bottom: 5px; /* Розмір анімованої лінії */
+    border: none;
+    background-color: transparent;
+    color: #000000; /* Колір тексту */
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px; /* Розмір тексту */
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease; /* Плавний перехід кольору тексту */
+}
+
+.btn-more::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 98%;
+    height: 2px; /* Товщина анімованої лінії */
+    background-color: #000000; /* Колір анімованої лінії */
+    transform: scaleX(0); /* Початково лінія невидима */
+    transition: transform 0.3s ease; /* Плавний перехід ширини лінії */
+}
+
+.btn-more:hover::after {
+    transform: scaleX(1); /* Показати лінію при наведенні */
+}
+
+/* Необов'язково: стилі для зміни колірної схеми при наведенні */
+.btn-more:hover {
+    color: #000000;
+}
+.item-goods{
+    flex-grow: 1;
+    height: 440px;
+    width: 300px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 80px;
+}
+.good-details{
+    padding: 0px 25px 10px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    line-height: 18px;
+    font-size: 12px;
+    color: #ffffff; /* Колір тексту */
+}
+.goods-name{
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0000ff; /* Колір тексту */
+}
+.goods-price{
+    font-weight: 600;
+    color: #0000ff; /* Колір тексту */
+}
+.goods-description {
+    color: #0000ff; /* Встановлюємо колір тексту */
+    text-decoration: none; /* Прибираємо стандартне підкреслення */
+    cursor: pointer; /* Додаємо курсор "рука" для інтерактивності */
+}
+
+.goods-description:hover {
+    text-decoration: underline; /* Додаємо підкреслення при наведенні */
+}
+
+.add-goods {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Розмістити елементи внизу контейнера */
+    align-items: flex-end; /* Розмістити елементи вправо контейнера */
+    transform: translateY(-100%); /* Початкове положення прихованого блоку */
+    gap: 10px;
+    transition: all 0.5s ease-in-out; /* Плавна анімація для всіх властивостей */
+}
+
+.item-goods:hover .add-goods {
+    transform: translateY(0); /* Підняти блок вгору при наведенні на item-goods */
+}
+.heart-icon{
+    cursor: pointer;
+}
+.btn-div-add {
+    width: 100%; /* Розтягнути внутрішній div на всю ширину контейнера */
+}
+.add-goods button {
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    height: 40px;
+    background-color: black; /* Чорний колір фону */
+    color: white; /* Білий колір тексту */
+    border: 2px solid transparent; /* Початкова обводка */
+    transition: color 0.3s, border-color 0.3s; /* Анімація для зміни кольору тексту та обводки */
+}
+
+.add-goods button:hover {
+    color: black; /* Зміна кольору тексту при наведенні */
+    background-color: #F5F5F3;
+    border-color: black; /* Зміна кольору обводки при наведенні */
+}
+
+.hidden {
+    display: none;
+}
+
+
+.quality-guarantee-section{
+    margin-top: 150px;
+}
+.h2-guarantee-container{
+    display: flex;
+    justify-content: end;
+    margin-left:365px
+;
+}
+.img-guarantee{
+    display: flex;
+    justify-content: end;
+    align-items: flex-start;
+    gap: 270px;
+    margin-top: 50px;
+}
+
+
+.desc-guarantee{
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    margin-top: 50px;
+
+}
+.guarantee-h4{
+    font-size: 14px;
+    color: #D2D2D2;
+    font-weight: 600;
+    font-style: italic;
+}
+.guarantee-text{
+    width: 1030px;
+    font-size: 12px;
+    line-height: 18px;
+}
+.hr-guarantee {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between; /* Вирівняти лінії по центру */
+    align-items: center; /* Вирівняти вертикально */
+}
+
+.hr-guarantee span {
+    border: none; /* Видалити межі */
+    border-top: 1px solid #D2D2D2; /* Створити горизонтальну лінію */
+}
+.hr-01{
+    width: 325px;
+}
+.hr-02{
+    width: 1030px;
+}
+.guarantee-facts{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+.what-guarantee{
+    font-size: 14px;
+    color: #D2D2D2;
+    font-weight: 600;
+    margin-bottom: 98px;
+    font-style: italic;
+}
+.make-purchase {
+    display: inline-block;
+    padding-left: 0;
+    position: relative;
+    padding-bottom: 5px; /* Розмір анімованої лінії */
+    border: none;
+    background-color: transparent;
+    color: #000000; /* Колір тексту */
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px; /* Розмір тексту */
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease; /* Плавний перехід кольору тексту */
+}
+.make-purchase::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 98%;
+    height: 2px; /* Товщина анімованої лінії */
+    background-color: #000000; /* Колір анімованої лінії */
+    transform: scaleX(0); /* Початково лінія невидима */
+    transition: transform 0.3s ease; /* Плавний перехід ширини лінії */
+}
+
+.make-purchase:hover::after {
+    transform: scaleX(1); /* Показати лінію при наведенні */
+}
+
+/* Необов'язково: стилі для зміни колірної схеми при наведенні */
+.make-purchase:hover {
+    color: #000000;
+}
+
+.desc-facts-guarantee{
+    display: flex;
+
+}
+.div-fact-guarantee{
+    margin-right: 125px;
+    margin-left: 145px;
+}
+.h4-fact-guarantee{
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #0000ff;
+    font-weight: 600;
+}
+.p-fact-guarantee{
+    width: 380px;
+    margin-top: 25px;
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.reviews-section{
+    margin-top: 150px;
+}
+
+.h2-frequently-asked-questions-container{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 25%;
+}
+.client-reviews{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+.client-reviews-01, .client-reviews-02, .client-reviews-03{
+    display: flex;
+    gap: 18px;
+}
+
+.client-reviews-item{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    display: inline-block;
+    perspective: 1000px;
+}
+
+.review-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: flex-start; /* Розміщення тексту вверху */
+    justify-content: center; /* Центрування тексту по горизонталі */
+    opacity: 0;
+    transition: opacity 0.5s;
+    backdrop-filter: blur(12px); /* Заблюрює фон */
+    pointer-events: none; /* Перешкоджає взаємодії з текстом відгуку */
+}
+
+.client-reviews-item:hover .review-overlay {
+    opacity: 1;
+    pointer-events: auto; /* Активує взаємодію з текстом відгуку при наведенні */
+}
+
+.review-text {
+    color: #ffffff;
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    max-width: 100%; /* Розтягнення тексту на всю ширину фото */
+    line-height: 18px;
+}
+.client-reviews-item img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.client-reviews-item:hover img {
+    transform: rotateY(180deg); /* Поворот фотографії при наведенні */
+}
+
+.reviews-pib{
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 600;
+    margin-top: 7px;
+}
+.years-client{
+    font-size: 12px;
+    margin-top: 5px;
+
+}
+.client-reviews-text{
+    display: flex;
+    align-items: end;
+}
+.reviews-p{
+    margin-left: 130px;
+    width: 350px;
+    font-family: 'NyghtSerif';
+
+    font-size: 20px;
+    line-height: 30px;
+}
+.quotes{
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+
+.frequently-asked-questions-section {
+    margin-top: 150px;
+}
+.faq-list-item{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 50px;
+}
+.frequently-asked-questions-section .faq-item {
+    margin-bottom: 20px;
+}
+
+.frequently-asked-questions-section .question {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 715px;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 32px;
+    font-family: WixMadeforText;
+    margin-bottom: 20px;
+}
+
+.frequently-asked-questions-section .answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.frequently-asked-questions-section .question-text {
+    flex-grow: 1;
+    width: 310px;
+}
+
+.frequently-asked-questions-section .toggle-btn {
+    font-size: 18px;
+    transition: transform 0.3s ease-out;
+}
+
+.frequently-asked-questions-section .faq-item.active .toggle-btn {
+    transform: rotate(180deg);
+}
+
+.frequently-asked-questions-section .faq-item.active .answer {
+    max-height: 200px; /* Встановіть вищу висоту, якщо ви очікуєте довших відповідей */
+}
+.answer{
+    display: flex;
+    justify-content: space-between;
+}
+.answer-p-01{
+    font-size: 12px;
+    font-weight: 600;
+    font-style: italic;
+    line-height: 18px;
+    color: #D2D2D2;
+}
+.answer-p-02{
+    text-transform: uppercase;
+    width: 550px;
+    font-size: 12px;
+    line-height: 18px;
+}
+.line-faq{
+    border: none;
+    height: 1px;
+    background-color: #D2D2D2;
+    margin-bottom: 35px;
+}
+.line-faq-end{
+    border: none;
+    height: 1px;
+    background-color: #D2D2D2;
+}
+.footer-container{
+    margin-top: 150px;
+    padding: 20px;
+
+    background-color: #0000ff;
+    color: #F7F9FB;
+
+}
+.head-footer{
+    display: flex;
+    justify-content: space-between;
+}
+.foo-footer{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 200px;
+    align-items: flex-start;
+}
+.menu-footer{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 12px; /* Збільшуємо розмір шрифту */
+}
+.desc-footer{
+    font-size: 28px;
+    font-weight: 500;
+    font-family: 'NyghtSerif';
+    line-height: 30px;
+    font-style: italic;
+    width: 200px;
+}
+.company-2024{
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+.privacy-policy{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.email-company {
+    font-size: 39px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+.div-menu-footer{
+    margin-right: 36%;
+    display: flex;
+    gap: 55px;
+
+}
+.ul-menu-footer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.contact-social{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 12px;
+}
+.reviews-num-section, .frequently-num-section, .goods-num-section{
+    font-size: 48px;
+    font-family: 'NyghtSerif';
+    color: #ccc;
+}
+
+
+
+
+
+
+
+
+.item-goods {
+    background-size: cover; /* Забезпечити, щоб зображення покривало весь контейнер */
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%; /* Розтягнути на всю ширину контейнера */
+
+}
+.cart-content {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+
+
+
+
+.cart-icon-container {
+    position: relative;
+    display: inline-block;
+}
+
+.cart-count {
+    position: absolute;
+    top: -10px;
+    right: -20px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 12px;
+}
+
+
+
+/* Корзина. */
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -600px;
+    width: 500px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+    transition: right 0.3s;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-sidebar.open {
+    right: 0;
+}
+
+.cart-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 20px;
+}
+
+.cart-items-container {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.total-price-container {
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.total-price {
+    font-weight: bold;
+    text-align: right;
+}
+
+.btn-checkout {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #0000ff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.btn-checkout:hover {
+    background-color: #0000cc;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.cart-item-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.detail-description {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    margin-left: 20px;
+    gap: 25px
+}
+
+.name-product {
+    font-size: 14px;
+    color: #0000ff;
+    line-height: 20px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.btn-delete {
+    border: 1px solid #0000ff;
+    background-color: transparent;
+    color: #0000ff;
+    height: 23px;
+
+}
+
+.btn-plus-minus {
+    border: 1px solid #0000ff;
+    background-color: transparent;
+    color: black;
+    padding: 5px;
+    cursor: pointer;
+    height: 27px;
+    width: 27px;
+}
+
+.h2-cart {
+    font-size: 20px;
+    font-weight: 400;
+    color: #0000ff;
+    margin-left: 20px;
+}
+
+.price-product {
+    color: #0000ff;
+}
+.cart-div{
+    margin-top: 20px;
+}
+.price-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.price-div span{
+    font-weight: 600;
+}
+.quantity{
+    color: #0000ff;
+    font-weight: 500;
+}
+.error {
+    border-color: red;
+}
+.error-message {
+    color: red;
+    font-size: 12px;
+    display: none;
+}
